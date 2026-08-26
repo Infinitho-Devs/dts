@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Days to Shine 2026 - Confirmacion de asistencia
+   Pink Night - Days to Shine 2026 | Confirmacion de asistencia
    --------------------------------------------------------------------------
    El formulario ya esta preparado para conectarse a un backend (PHP + MySQL,
    Node, etc.). Solo hay que definir el endpoint:
@@ -24,7 +24,7 @@
   var CONFIG = {
     endpoint: '',          // se sobreescribe con data-endpoint si existe
     metodo: 'POST',
-    evento: 'days-to-shine-2026',
+    evento: 'pink-night-2026',
     timeoutMs: 15000,
     demoDelayMs: 900       // solo aplica en modo demo
   };
@@ -46,7 +46,8 @@
     apellido: document.getElementById('apellido'),
     cedula:   document.getElementById('cedula'),
     telefono: document.getElementById('telefono'),
-    correo:   document.getElementById('correo')
+    correo:   document.getElementById('correo'),
+    correo2:  document.getElementById('correo2')
   };
   var honeypot = document.getElementById('sitio-web');
 
@@ -143,6 +144,13 @@
       if (!v) return 'Escribe tu correo.';
       if (!RE_CORREO.test(v)) return 'Escribe un correo válido, como maria@correo.com.';
       if (v.length > 120) return 'El correo es demasiado largo.';
+      return '';
+    },
+    correo2: function (v) {
+      if (!v) return 'Repite tu correo.';
+      if (v.toLowerCase() !== campos.correo.value.trim().toLowerCase()) {
+        return 'Los correos no coinciden.';
+      }
       return '';
     }
   };
@@ -249,8 +257,13 @@
     validarCampo('cedula', true);
   });
 
-  // Normaliza el correo en minusculas al salir del campo
+  // Normaliza los correos en minusculas al salir del campo
   campos.correo.addEventListener('blur', function () {
+    this.value = this.value.trim().toLowerCase();
+    // Si ya habia escrito la confirmacion, la revisamos de nuevo
+    if (campos.correo2.value.trim()) validarCampo('correo2', true);
+  });
+  campos.correo2.addEventListener('blur', function () {
     this.value = this.value.trim().toLowerCase();
   });
 
