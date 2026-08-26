@@ -149,8 +149,8 @@ body{
 /* --------------------------------------------------------------------------
    Piezas decorativas: los cuatro iconos de campana, uno en cada margen.
    Van detras de la tarjeta (z-index -1) y se asoman por los lados.
-   Cada uno se coloco sobre el color que mas lo contrasta: los magentas sobre
-   el rosado de la izquierda, el rosa palido sobre el naranja de la derecha.
+   Arriba: compromiso a la izquierda, transformacion a la derecha.
+   Abajo:  inspiracion a la izquierda, accion a la derecha.
    -------------------------------------------------------------------------- */
 .deco{
   position:absolute;
@@ -163,8 +163,8 @@ body{
 }
 .deco--compromiso    {top:16%; left:1.5%;  animation-delay:-1s}
 .deco--transformacion{top:4%;  right:1%;   animation-delay:-4s}
-.deco--accion        {top:70%; left:2.5%;  animation-delay:-7s}
-.deco--inspiracion   {top:78%; right:1.5%; animation-delay:-2.5s}
+.deco--inspiracion   {top:70%; left:2.5%;  animation-delay:-2.5s}
+.deco--accion        {top:78%; right:1.5%; animation-delay:-7s}
 
 /* Los iconos solo se muestran cuando hay margen real a los lados de la
    tarjeta. Por debajo de ~1440px asomarian como astillas en el borde y se
