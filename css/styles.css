@@ -212,7 +212,7 @@ body{
   font-weight:700;
   line-height:.84;
   letter-spacing:-.012em;
-  font-size:clamp(4rem,11vw,7.6rem);
+  font-size:clamp(3.4rem,9vw,6.2rem);
   text-transform:uppercase;
   filter:drop-shadow(0 .5rem 1.6rem rgba(140,0,50,.32));
 }
@@ -220,12 +220,41 @@ body{
 .pn-1{color:rgba(255,255,255,.68)}
 .pn-2{color:#fff;margin-left:.06em}
 
+/* --- Etiqueta sobre el titulo --- */
+.kicker{
+  margin-bottom:.5rem;
+  font-size:.78rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase;
+  color:rgba(255,255,255,.85);
+}
+
+/* --- Datos del acto: lo minimo para saber a cual se esta confirmando --- */
+.datos{
+  display:grid;
+  gap:.7rem;
+}
+@media (min-width:30rem) and (max-width:59.99rem){
+  .datos{grid-template-columns:1fr 1fr; gap:1.25rem}
+}
+.dato{display:flex; flex-direction:column; gap:.1rem}
+.dato__k{
+  font-size:.66rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase;
+  color:rgba(255,255,255,.65);
+}
+.dato__v{
+  font-size:1.12rem; font-weight:700; line-height:1.25;
+}
+.dato__v small{
+  display:block;
+  font-size:.9rem; font-weight:400;
+  color:rgba(255,255,255,.85);
+}
+
 .nota{
-  padding-top:clamp(1rem,2vw,1.5rem);
+  padding-top:clamp(.9rem,1.8vw,1.3rem);
   border-top:1px solid rgba(255,255,255,.3);
-  font-size:.95rem;
+  font-size:.9rem;
   line-height:1.5;
-  color:rgba(255,255,255,.9);
+  color:rgba(255,255,255,.88);
   max-width:34ch;
 }
 
@@ -492,7 +521,9 @@ body{
   .page{padding:.6rem}
   .brand{gap:.85rem;padding:1.3rem 1.4rem}
   .dts{width:6.2rem}
-  .pink-night{font-size:clamp(3.2rem,14vw,4.4rem)}
+  .pink-night{font-size:clamp(2.8rem,12vw,3.8rem)}
+  .kicker{margin-bottom:.3rem;font-size:.7rem}
+  .datos{gap:.45rem}
   .card{padding:1.4rem}
 }
 
@@ -520,12 +551,15 @@ body{
    ========================================================================== */
 @media (min-width:960px) and (max-height:830px){
   html{font-size:16px}
-  .page{padding:.5rem clamp(.75rem,1.8vw,1.4rem)}
+  .page{padding:.3rem clamp(.75rem,1.8vw,1.4rem)}
   .brand,.card{padding:1.05rem 1.5rem}
   .brand{gap:.65rem}
 
   .dts{width:7rem}
-  .pink-night{font-size:clamp(3rem,6.4vw,4.6rem)}
+  .pink-night{font-size:clamp(2.6rem,5.4vw,3.9rem)}
+  .kicker{margin-bottom:.35rem;font-size:.72rem}
+  .datos{gap:.5rem}
+  .dato__v{font-size:1.05rem}
 
   .card h2{font-size:clamp(1.7rem,2.9vw,2.15rem)}
   .sub{margin-top:.5rem}
@@ -544,9 +578,14 @@ body{
   .page{padding-top:.35rem;padding-bottom:.35rem}
   .brand,.card{padding:.9rem 1.4rem}
   .dts{width:6.2rem}
-  .pink-night{font-size:clamp(2.7rem,5.6vw,4rem)}
-  .submit{min-height:2.85rem;margin-top:.8rem}
-  .foot{margin-top:.7rem;padding-top:.65rem}
+  .pink-night{font-size:clamp(2.3rem,4.8vw,3.4rem)}
+  .datos{gap:.4rem}
+  .sub{font-size:.95rem;margin-top:.45rem}
+  .fields{gap:.5rem;margin-top:.7rem}
+  .field input{min-height:2.5rem;padding:.55rem .75rem}
+  .submit{min-height:2.8rem;margin-top:.75rem}
+  .legal{margin-top:.55rem;font-size:.8rem}
+  .foot{margin-top:.65rem;padding-top:.6rem}
 }
 
 /* ==========================================================================
